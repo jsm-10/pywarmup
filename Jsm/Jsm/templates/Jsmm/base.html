@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Biblioteca{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    <header>
+      <h1>Biblioteca</h1>
+      <nav>
+        <ul>
+          <li><a href="{% url 'biblioteca:inicio' %}">Inicio</a></li>
+          <li><a href="{% url 'biblioteca:lista_autores' %}">Autores</a></li>
+          <li><a href="{% url 'biblioteca:lista_editoriales' %}">Editoriales</a></li>
+          <li><a href="{% url 'biblioteca:lista_libros' %}">Libros</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+  </body>
+</html>
