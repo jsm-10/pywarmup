@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Autores{% endblock %}
+
+{% block content %}
+  <h2>Lista de autores</h2>
+  <ul>
+    {% for autor in autores %}
+      <li><a href="{% url 'biblioteca:detalle_autor' autor.id %}">{{ autor.nombre }} {{ autor.apellido }}</a></li>
+    {% empty %}
+      <li>No hay autores disponibles.</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'biblioteca:agregar_autor' %}">Agregar autor</a>
+{% endblock %}
